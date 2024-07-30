@@ -4,23 +4,26 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 
-@Entity
+@Document(collation = "order_item_table")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "order_item_table")
 public class OrderItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Long productId;
-    private Integer quantity;
+
+    private String productId;
+    private String quantity;
     private BigDecimal price;
 
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
+//    @ManyToOne
+//    @JoinColumn(name = "order_id")
+//    private Order order;
+
+//    @DBRef
+//    private Order order; // Use DBRef to reference related document
+
 }

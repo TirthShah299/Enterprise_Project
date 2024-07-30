@@ -25,7 +25,7 @@ public class ProductController {
 
     // Fetch Product by Id
     @GetMapping("/{id}")
-    public Product getProduct(@PathVariable Long id) {
+    public Product getProduct(@PathVariable String id) {
         return productRepository.findById(id).orElseThrow();
     }
 
@@ -37,7 +37,7 @@ public class ProductController {
 
     // Delete Product by Id
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteProduct(@PathVariable Long id) {
+    public ResponseEntity<String> deleteProduct(@PathVariable String id) {
         Optional<Product> product = productRepository.findById(id);
         if (!product.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -58,6 +58,5 @@ public class ProductController {
 //        existingProduct.setImageId(product.getImageId());
 //        return productRepository.save(existingProduct);
 //    }
-
 
 }
