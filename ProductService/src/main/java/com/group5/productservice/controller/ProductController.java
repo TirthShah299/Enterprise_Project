@@ -39,7 +39,7 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteProduct(@PathVariable String id) {
         Optional<Product> product = productRepository.findById(id);
-        if (!product.isPresent()) {
+        if (product.isPresent()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("Product not found with id: " + id);
         }
