@@ -1,12 +1,11 @@
-package com.group5.productservice.entity;
+package com.group5.adminservice.entity;
 
-import jakarta.persistence.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.annotation.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.math.BigDecimal;
 
 @Document(collection = "products")
 @Data
@@ -17,7 +16,7 @@ public class Product {
     private String id;
     private String name;
     private String description;
-    private String price;
+    private String price; // Ensure this matches the type used in your database
     private Integer stock;
     private String imageId;
 }
