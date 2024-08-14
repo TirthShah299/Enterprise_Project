@@ -3,11 +3,13 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/AdminService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/EdgeServer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EurekaService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ImageService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/OrdersService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Product/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ProductService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>

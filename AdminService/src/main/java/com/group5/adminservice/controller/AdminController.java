@@ -34,8 +34,6 @@ public class AdminController {
         return "products";
     }
 
-
-
     @PostMapping("/products")
     public String createProduct(@ModelAttribute ProductDto productDto) {
         adminServiceImpl.createProduct(productDto);

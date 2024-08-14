@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/ImageService/pom.xml" />
         <option value="$PROJECT_DIR$/EurekaService/pom.xml" />
         <option value="$PROJECT_DIR$/TirthService/pom.xml" />
+        <option value="$PROJECT_DIR$/EdgeServer/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

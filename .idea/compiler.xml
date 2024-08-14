@@ -7,8 +7,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Project" />
         <module name="AdminService" />
+        <module name="EdgeServer" />
         <module name="ImageService" />
         <module name="ProductService" />
         <module name="OrdersService" />
@@ -24,11 +24,12 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Admin" options="-parameters" />
       <module name="AdminService" options="-parameters" />
+      <module name="EdgeServer" options="-parameters" />
       <module name="EurekaService" options="-parameters" />
       <module name="ImageService" options="-parameters" />
       <module name="OrdersService" options="-parameters" />
       <module name="ProductService" options="-parameters" />
-      <module name="Project" options="-parameters" />
+      <module name="Project" options="" />
       <module name="TirthService" options="-parameters" />
     </option>
   </component>

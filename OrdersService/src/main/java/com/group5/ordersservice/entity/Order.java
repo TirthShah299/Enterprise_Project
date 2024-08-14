@@ -1,6 +1,6 @@
 package com.group5.ordersservice.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,7 @@ import java.util.List;
 @Document(collection = "order_table")
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+
 public class Order {
 
     @Id
@@ -21,11 +21,11 @@ public class Order {
     private LocalDateTime orderDate;
     private BigDecimal totalPrice;
 
-//    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<OrderItem> items;
-
 //    @DBRef // Use DBRef to reference related documents
-    private List<OrderItem> items;
-
+    private List<OrderItem> orderItems;
+    public Order() {
+        this.orderDate = LocalDateTime.now();
+    }
 
 }
+

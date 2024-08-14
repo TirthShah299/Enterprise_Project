@@ -7,15 +7,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 
-@Document(collation = "order_item_table")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderItem {
 
     private String productId;
-    private String quantity;
+    private int quantity;
     private BigDecimal price;
+
 
 //    @ManyToOne
 //    @JoinColumn(name = "order_id")
@@ -25,3 +25,4 @@ public class OrderItem {
 //    private Order order; // Use DBRef to reference related document
 
 }
+
