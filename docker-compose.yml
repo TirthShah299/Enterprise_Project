@@ -1,0 +1,86 @@
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-containers
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb:/data/db
+    networks:
+      - internal_network
+
+  edge-service:
+    image: group-project/edge-server:1.0.0
+    container_name: my-edge-container
+    ports:
+      - "8086:8080"
+    depends_on:
+      - mongodb
+      - eureka-service
+    networks:
+      - internal_network
+  eureka-service:
+    image: group-project/eureka-service:1.0.0
+    container_name: my-eureka-container
+    ports:
+      - "8761:8761"
+    networks:
+      - internal_network
+
+  image-service:
+    image: group-project/image-service:1.0.0
+    container_name: my-image-container
+    ports:
+      - "8087:8080"
+    depends_on:
+      - mongodb
+      - eureka-service
+      - product-service
+      - orders-service
+    networks:
+      - internal_network
+
+  admin-service:
+    image: group-project/admin-service:1.0.0
+    container_name: my-admin-container
+    ports:
+      - "8083:8080"
+    depends_on:
+      - mongodb
+      - eureka-service
+    networks:
+      - internal_network
+
+  product-service:
+    image: group-project/product-service:1.0.0
+    container_name: my-product-container
+    ports:
+      - "8084:8080"
+    depends_on:
+      - mongodb
+      - eureka-service
+    networks:
+      - internal_network
+
+  orders-service:
+    image: group-project/orders-service:1.0.0
+    container_name: my-order-container
+    ports:
+      - "8085:8080"
+    networks:
+      - internal_network
+    depends_on:
+      - mongodb
+      - eureka-service
+      - product-service
+
+volumes:
+  mongodb:
+    name: mongodb
+
+networks:
+  internal_network:
+    external: false
+    name: group-network

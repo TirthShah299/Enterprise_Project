@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Data
 public class Order {
     @Id
-    private Long id;
+    private String id;
     private LocalDateTime orderDate;
     private Double totalPrice;
 }

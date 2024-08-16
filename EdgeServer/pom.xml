@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.2</version>
+        <version>3.2.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.group5</groupId>
     <artifactId>edge-server</artifactId>
     <version>1.0.0</version>
-    <name>EdgeServer</name>
+    <name>edge-server</name>
     <description>EdgeServer</description>
     <url/>
     <licenses>
@@ -82,7 +82,7 @@
                 <version>3.4.1</version>
                 <configuration>
                     <to>
-                        <image>week13igs/${project.name}:${project.version}</image>
+                        <image>group-project/${project.name}:${project.version}</image>
                     </to>
                     <container>
                         <jvmFlags>

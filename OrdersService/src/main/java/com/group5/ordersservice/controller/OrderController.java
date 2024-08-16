@@ -12,17 +12,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/orders")
+@RequestMapping("orders")
 public class OrderController {
 
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private OrderRepository orderRepository;
 
     // Add New Order
     @PostMapping
     public ResponseEntity<Order> createOrder(@RequestBody List<OrderItem> orderItems) {
         Order order = orderService.createOrder(orderItems);
         return ResponseEntity.ok(order);
+    }
+
+    @GetMapping("list")
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll();
     }
 
 }

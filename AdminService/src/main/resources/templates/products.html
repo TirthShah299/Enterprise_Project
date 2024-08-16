@@ -7,8 +7,8 @@
 <body>
 <h1>Manage Products</h1>
 <nav>
-    <a th:href="@{/}">Home</a>
-    <a th:href="@{/admin/products/add}">Add New Product</a>
+    <a th:href="@{/api/dashboard}">Home</a>
+    <a th:href="@{/api/admin/products/add}">Add New Product</a>
 
 </nav>
 
@@ -34,11 +34,11 @@
         <td th:text="${product.stock}">Stock</td>
         <td th:text="${product.imageId}">Stock</td>
         <td>
-            <form th:action="@{/admin/products/delete}" method="post" style="display:inline;">
+            <form th:action="@{/api/admin/products/delete}" method="post" style="display:inline;">
                 <input type="hidden" name="id" th:value="${product.id}" />
                 <button type="submit">Delete</button> |
             </form>
-            <a th:href="@{/admin/products/update/{id}(id=${product.id})}">Edit</a>
+            <a th:href="@{/api/admin/products/update/{id}(id=${product.id})}">Edit</a>
         </td>
     </tr>
     </tbody>

@@ -10,8 +10,8 @@
     </parent>
     <groupId>com.group5</groupId>
     <artifactId>EurekaService</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>EurekaService</name>
+    <version>1.0.0</version>
+    <name>eureka-service</name>
     <description>EurekaService</description>
     <url/>
     <licenses>
@@ -62,6 +62,21 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.4.1</version>
+                <configuration>
+                    <to>
+                        <image>group-project/${project.name}:${project.version}</image>
+                    </to>
+                    <container>
+                        <jvmFlags>
+                            <jvmFlag>-Dspring.profiles.active=prod</jvmFlag>
+                        </jvmFlags>
+                    </container>
+                </configuration>
             </plugin>
         </plugins>
     </build>

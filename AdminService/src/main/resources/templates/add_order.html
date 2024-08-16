@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add New Order</title>
+    <link rel="stylesheet" th:href="@{css/styles.css}" />
+</head>
+<body>
+<h1>Add New Order</h1>
+<nav>
+    <a th:href="@{/api/admin/orders}">Back to Order List</a>
+</nav>
+
+<form th:action="@{/api/admin/orders}" method="post">
+    <label for="orderDate">Order Date:</label>
+    <input type="text" id="orderDate" name="orderDate" required/>
+
+    <label for="totalPrice">Total Price:</label>
+    <input type="number" step="0.01" id="totalPrice" name="totalPrice" required/>
+
+    <button type="submit">Add Order</button>
+</form>
+</body>
+</html>

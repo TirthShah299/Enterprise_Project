@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Order</title>
+    <link rel="stylesheet" th:href="@{css/styles.css}" />
+</head>
+<body>
+<h1>Edit Order</h1>
+<form th:action="@{/api/admin/orders/update}" method="post">
+    <input type="hidden" name="id" th:value="${order.id}" />
+    <label for="orderDate">Order Date:</label>
+    <input type="text" id="orderDate" name="orderDate" th:value="${order.orderDate}" required />
+    <label for="totalPrice">Total Price:</label>
+    <input type="number" step="0.01" id="totalPrice" name="totalPrice" th:value="${order.totalPrice}" required />
+    <button type="submit">Update Order</button>
+</form>
+</body>
+</html>

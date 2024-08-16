@@ -7,10 +7,10 @@
 <body>
 <h1>Add New Product</h1>
 <nav>
-    <a th:href="@{/admin/products}">Back to Product List</a>
+    <a th:href="@{/api/admin/products}">Back to Product List</a>
 </nav>
 
-<form th:action="@{/admin/products}" method="post">
+<form th:action="@{/api/admin/products}" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required/>
 
